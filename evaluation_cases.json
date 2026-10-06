@@ -1,0 +1,126 @@
+[
+  {
+    "name": "micrograd_backward_location",
+    "repository": "https://github.com/karpathy/micrograd",
+    "question": "Where is Value.backward implemented?",
+    "expected_route": "code",
+    "expected_sources": [
+      "micrograd/engine.py"
+    ],
+    "expected_keywords": [
+      "Value",
+      "backward"
+    ],
+    "must_refuse": false
+  },
+  {
+    "name": "micrograd_backward_behavior",
+    "repository": "https://github.com/karpathy/micrograd",
+    "question": "How does backward propagate gradients?",
+    "expected_route": "code",
+    "expected_sources": [
+      "micrograd/engine.py"
+    ],
+    "expected_keywords": [
+      "topological",
+      "grad"
+    ],
+    "must_refuse": false
+  },
+  {
+    "name": "micrograd_missing_auth",
+    "repository": "https://github.com/karpathy/micrograd",
+    "question": "Where is user authentication implemented?",
+    "expected_route": "code",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "must_refuse": true
+  },
+  {
+    "name": "schedule_job_location",
+    "repository": "https://github.com/dbader/schedule",
+    "question": "Where is the Job class defined?",
+    "expected_route": "code",
+    "expected_sources": [
+      "schedule/__init__.py"
+    ],
+    "expected_keywords": [
+      "Job"
+    ],
+    "must_refuse": false
+  },
+  {
+    "name": "schedule_run_pending",
+    "repository": "https://github.com/dbader/schedule",
+    "question": "How does run_pending decide which jobs to run?",
+    "expected_route": "code",
+    "expected_sources": [
+      "schedule/__init__.py"
+    ],
+    "expected_keywords": [
+      "run_pending",
+      "should_run"
+    ],
+    "must_refuse": false
+  },
+  {
+    "name": "schedule_cancel_job",
+    "repository": "https://github.com/dbader/schedule",
+    "question": "What happens when a job returns CancelJob?",
+    "expected_route": "code",
+    "expected_sources": [
+      "schedule/__init__.py"
+    ],
+    "expected_keywords": [
+      "CancelJob",
+      "cancel"
+    ],
+    "must_refuse": false
+  },
+  {
+    "name": "nanogpt_model_location",
+    "repository": "https://github.com/karpathy/nanoGPT",
+    "question": "Where is the GPT model class defined?",
+    "expected_route": "code",
+    "expected_sources": [
+      "model.py"
+    ],
+    "expected_keywords": [
+      "GPT",
+      "model"
+    ],
+    "must_refuse": false
+  },
+  {
+    "name": "nanogpt_learning_rate",
+    "repository": "https://github.com/karpathy/nanoGPT",
+    "question": "In this nanoGPT repository, where and how is the learning rate scheduled during training?",
+    "expected_route": "code",
+    "expected_sources": [
+      "train.py"
+    ],
+    "expected_keywords": [
+      "warmup",
+      "cosine"
+    ],
+    "must_refuse": false
+  },
+  {
+    "name": "nanogpt_missing_auth",
+    "repository": "https://github.com/karpathy/nanoGPT",
+    "question": "Where is user login authentication implemented?",
+    "expected_route": "code",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "must_refuse": true
+  },
+  {
+    "name": "general_python_question",
+    "repository": "https://github.com/karpathy/micrograd",
+    "question": "What is a Python class?",
+    "expected_route": "general",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "must_refuse": false
+  }
+]

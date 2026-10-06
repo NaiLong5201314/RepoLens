@@ -1,0 +1,333 @@
+{
+  "summary": {
+    "total_cases": 10,
+    "passes_cases": 8,
+    "overall_pass_rate": 80.0,
+    "routing_accuracy": 90.0,
+    "source_accuracy": 85.7,
+    "keyword_coverage": 85.7,
+    "refusal_accuracy": 50.0,
+    "average_latency_seconds": 42.52
+  },
+  "results": [
+    {
+      "name": "micrograd_backward_location",
+      "question": "Where is Value.backward implemented?",
+      "repository": "https://github.com/karpathy/micrograd",
+      "passed": true,
+      "expected_route": "code",
+      "actual_route": "code",
+      "route_pass": true,
+      "expected_sources": [
+        "micrograd/engine.py"
+      ],
+      "actual_sources": [
+        "micrograd/engine.py (around line 2)",
+        "micrograd/engine.py (around line 3)",
+        "micrograd/engine.py (around line 9)",
+        "micrograd/engine.py (around line 14)",
+        "micrograd/engine.py (around line 15)",
+        "micrograd/engine.py (around line 17)",
+        "micrograd/engine.py (around line 20)",
+        "micrograd/engine.py (around line 25)",
+        "micrograd/engine.py (around line 54)",
+        "micrograd/engine.py (around line 5)",
+        "micrograd/engine.py (around line 13)",
+        "micrograd/engine.py (around line 24)",
+        "micrograd/engine.py (around line 28)",
+        "micrograd/engine.py (around line 35)"
+      ],
+      "source_pass": true,
+      "expected_keywords": [
+        "Value",
+        "backward"
+      ],
+      "keyword_coverage": 1.0,
+      "keyword_pass": true,
+      "must_refuse": false,
+      "refusal_pass": true,
+      "latency_seconds": 30.53,
+      "answer": "- Location: micrograd/engine.py\n- Details: Value.backward is implemented as a method on the Value class in micrograd/engine.py. It builds a topological order of the computation graph and then propagates gradients by calling each node’s _backward in reverse topo order. The definition starts at def backward(self): around line 54, with the traversal and gradient propagation occurring through lines ~56–71. [source: micrograd/engine.py, lines 54-71]",
+      "error": null
+    },
+    {
+      "name": "micrograd_backward_behavior",
+      "question": "How does backward propagate gradients?",
+      "repository": "https://github.com/karpathy/micrograd",
+      "passed": false,
+      "expected_route": "code",
+      "actual_route": "general",
+      "route_pass": false,
+      "expected_sources": [
+        "micrograd/engine.py"
+      ],
+      "actual_sources": [],
+      "source_pass": false,
+      "expected_keywords": [
+        "topological",
+        "grad"
+      ],
+      "keyword_coverage": 0.0,
+      "keyword_pass": false,
+      "must_refuse": false,
+      "refusal_pass": true,
+      "latency_seconds": 5.28,
+      "answer": "This question does not require codebase retrieval.",
+      "error": null
+    },
+    {
+      "name": "micrograd_missing_auth",
+      "question": "Where is user authentication implemented?",
+      "repository": "https://github.com/karpathy/micrograd",
+      "passed": true,
+      "expected_route": "code",
+      "actual_route": "code",
+      "route_pass": true,
+      "expected_sources": [],
+      "actual_sources": [
+        "test/test_engine.py (lines 1)",
+        "micrograd/engine.py (lines 48)",
+        "micrograd/nn.py (lines 30)",
+        "test/test_engine.py (lines 28)"
+      ],
+      "source_pass": true,
+      "expected_keywords": [],
+      "keyword_coverage": 1.0,
+      "keyword_pass": true,
+      "must_refuse": true,
+      "refusal_pass": true,
+      "latency_seconds": 102.03,
+      "answer": "There is no user authentication implementation in this codebase. The project is focused on a tiny autograd engine and a small neural network library, not authentication.\n\nEvidence:\n- autograd engine (Value class) shows the core of the library, with no auth-related code: micrograd/engine.py [source: micrograd/engine.py, lines 2-8], [source: micrograd/engine.py, lines 54-70].\n- neural network components (Module, Neuron, Layer, MLP): micrograd/nn.py [source: micrograd/nn.py, lines 4-9], [source: micrograd/nn.py, lines 13-18], [source: micrograd/nn.py, lines 30-43], [source: micrograd/nn.py, lines 45-53].\n- tests focus on autograd behavior, not authentication: test/test_engine.py [source: test/test_engine.py, lines 1-7].\n- README describes the project as an autograd engine and tiny neural net library, not authentication: README.md [source: README.md, lines 6-7].\n\nIf you’re expecting an authentication feature, it isn’t present in this repository. If you want, I can search specifically for any auth-related mentions or files, but based on the current codebase, there’s no authentication implementation.",
+      "error": null
+    },
+    {
+      "name": "schedule_job_location",
+      "question": "Where is the Job class defined?",
+      "repository": "https://github.com/dbader/schedule",
+      "passed": true,
+      "expected_route": "code",
+      "actual_route": "code",
+      "route_pass": true,
+      "expected_sources": [
+        "schedule/__init__.py"
+      ],
+      "actual_sources": [
+        "schedule/__init__.py (around line 71)",
+        "schedule/__init__.py (around line 167)",
+        "schedule/__init__.py (around line 209)",
+        "schedule/__init__.py (around line 211)",
+        "schedule/__init__.py (around line 839)",
+        "schedule/__init__.py (around line 906)",
+        "docs/conf.py (around line 282)",
+        "schedule/__init__.py (around line 2)"
+      ],
+      "source_pass": true,
+      "expected_keywords": [
+        "Job"
+      ],
+      "keyword_coverage": 1.0,
+      "keyword_pass": true,
+      "must_refuse": false,
+      "refusal_pass": true,
+      "latency_seconds": 20.48,
+      "answer": "The Job class is defined in schedule/__init__.py, around lines 209-213 (class Job: ...). [source: schedule/__init__.py, lines 209-213]",
+      "error": null
+    },
+    {
+      "name": "schedule_run_pending",
+      "question": "How does run_pending decide which jobs to run?",
+      "repository": "https://github.com/dbader/schedule",
+      "passed": true,
+      "expected_route": "code",
+      "actual_route": "code",
+      "route_pass": true,
+      "expected_sources": [
+        "schedule/__init__.py"
+      ],
+      "actual_sources": [
+        "schedule/__init__.py (around line 33)",
+        "schedule/__init__.py (around line 89)",
+        "schedule/__init__.py (around line 93)",
+        "schedule/__init__.py (around line 95)",
+        "schedule/__init__.py (around line 850)",
+        "schedule/__init__.py (around line 851)",
+        "schedule/__init__.py (around line 854)",
+        "test_schedule.py (around line 372)"
+      ],
+      "source_pass": true,
+      "expected_keywords": [
+        "run_pending",
+        "should_run"
+      ],
+      "keyword_coverage": 1.0,
+      "keyword_pass": true,
+      "must_refuse": false,
+      "refusal_pass": true,
+      "latency_seconds": 49.66,
+      "answer": "- run_pending builds a list of runnable jobs by filtering for jobs where should_run is True. It does this with a generator: runnable_jobs = (job for job in self.jobs if job.should_run), then iterates over them. Evidence: [source: schedule/__init__.py, lines 0090-0101].\n\n- should_run is the gatekeeper: it returns True only if the current time is at or past the job’s next_run. It asserts next_run is set, then checks datetime.datetime.now() >= self.next_run. Evidence: [source: schedule/__init__.py, lines 0667-0673].\n\n- runnable jobs are executed in order of their next_run (it sorts the runnable jobs). This relies on Job.__lt__ which compares next_run. Evidence: [source: schedule/__init__.py, lines 0257-0263], [source: schedule/__init__.py, lines 0100-0101].\n\n- Each runnable job is executed via _run_job, which calls job.run() (and may cancel the job if the function returns CancelJob). Evidence: [source: schedule/__init__.py, lines 0172-0176], [source: schedule/__init__.py, lines 0690-0698].\n\n- Important behavioral note: run_pending does not run “missed” jobs. If a job’s next_run was in the past since the last check, run_pending will not re-run it; this is explicit in the docstring of run_pending. Evidence: [source: schedule/__init__.py, lines 0093-0098].\n\nIn short: run_pending picks jobs whose next_run has arrived (should_run), runs them in ascending next_run order, and does not retroactively run jobs that were missed between polls. Evidence: [0090-0101], [0667-0673], [0257-0263], [0172-0176], [0093-0098].",
+      "error": null
+    },
+    {
+      "name": "schedule_cancel_job",
+      "question": "What happens when a job returns CancelJob?",
+      "repository": "https://github.com/dbader/schedule",
+      "passed": true,
+      "expected_route": "code",
+      "actual_route": "code",
+      "route_pass": true,
+      "expected_sources": [
+        "schedule/__init__.py"
+      ],
+      "actual_sources": [
+        "schedule/__init__.py (around line 71)",
+        "schedule/__init__.py (around line 174)",
+        "schedule/__init__.py (around line 678)",
+        "schedule/__init__.py (around line 679)",
+        "schedule/__init__.py (around line 680)",
+        "schedule/__init__.py (around line 682)",
+        "schedule/__init__.py (around line 688)",
+        "schedule/__init__.py (around line 697)"
+      ],
+      "source_pass": true,
+      "expected_keywords": [
+        "CancelJob",
+        "cancel"
+      ],
+      "keyword_coverage": 1.0,
+      "keyword_pass": true,
+      "must_refuse": false,
+      "refusal_pass": true,
+      "latency_seconds": 35.43,
+      "answer": "- CancelJob is a signal to unschedule the job. When a job returns CancelJob (as a value or the CancelJob singleton), the scheduler will cancel (unschedule) that job. [source: schedule/__init__.py, lines 71-72, 174-176]\n\n- How it happens in practice:\n  - If the job’s deadline is reached, CancelJob is returned immediately (the job is not run). [source: schedule/__init__.py, lines 0677-0681, 0686-0689]\n  - If the next scheduled run would exceed the job’s deadline after execution, CancelJob is returned after the run; CancelJob has priority over other return values. [source: schedule/__init__.py, lines 0678-0681, 0682-0684, 0695-0698]\n  - The code path explicitly cancels the job when CancelJob is observed from a job’s return value. [source: schedule/__init__.py, lines 0172-0175]\n\n- In short: returning CancelJob causes the scheduler to call cancel_job(job), effectively removing the job from future executions. [source: schedule/__init__.py, lines 0173-0175]",
+      "error": null
+    },
+    {
+      "name": "nanogpt_model_location",
+      "question": "Where is the GPT model class defined?",
+      "repository": "https://github.com/karpathy/nanoGPT",
+      "passed": true,
+      "expected_route": "code",
+      "actual_route": "code",
+      "route_pass": true,
+      "expected_sources": [
+        "model.py"
+      ],
+      "actual_sources": [
+        "bench.py (lines 50)",
+        "model.py (lines 109)",
+        "model.py (lines 176)",
+        "sample.py (lines 34)",
+        "model.py (around line 12)",
+        "model.py (around line 18)",
+        "model.py (around line 29)",
+        "model.py (around line 78)",
+        "model.py (around line 94)",
+        "model.py (around line 108)",
+        "model.py (around line 109)",
+        "model.py (around line 118)"
+      ],
+      "source_pass": true,
+      "expected_keywords": [
+        "GPT",
+        "model"
+      ],
+      "keyword_coverage": 1.0,
+      "keyword_pass": true,
+      "must_refuse": false,
+      "refusal_pass": true,
+      "latency_seconds": 28.63,
+      "answer": "The GPT model class is defined in model.py.\n\n- Where the class is defined: class GPT(nn.Module) in model.py, starting around line 118. Evidence: [source: model.py, lines 118-140]\n- The configuration class it uses: GPTConfig in model.py, defined around lines 109-117. Evidence: [source: model.py, lines 109-117]\n- How it’s used/instantiated in the project: bench.py instantiates it as GPT(gptconf) around lines 50-64. Evidence: [source: bench.py, lines 50-64]\n- A forward method example: the forward implementation is in model.py around lines 176-193. Evidence: [source: model.py, lines 176-193]\n\nIf you want me to pull exact snippets, I can fetch the surrounding code blocks.",
+      "error": null
+    },
+    {
+      "name": "nanogpt_learning_rate",
+      "question": "In this nanoGPT repository, where and how is the learning rate scheduled during training?",
+      "repository": "https://github.com/karpathy/nanoGPT",
+      "passed": true,
+      "expected_route": "code",
+      "actual_route": "code",
+      "route_pass": true,
+      "expected_sources": [
+        "train.py"
+      ],
+      "actual_sources": [
+        "config/train_gpt2.py (lines 1)",
+        "train.py (lines 231)",
+        "model.py (lines 227)",
+        "config/eval_gpt2_medium.py (lines 1)",
+        "train.py (lines 257)",
+        "train.py (lines 51)"
+      ],
+      "source_pass": true,
+      "expected_keywords": [
+        "warmup",
+        "cosine"
+      ],
+      "keyword_coverage": 1.0,
+      "keyword_pass": true,
+      "must_refuse": false,
+      "refusal_pass": true,
+      "latency_seconds": 47.74,
+      "answer": "- Location: The learning rate schedule is implemented in train.py.\n\n- How it works (code): \n  - There is a function get_lr(it) that controls the per-iteration learning rate:\n    - Linear warmup for the first warmup_iters steps: if it < warmup_iters, it returns learning_rate * (it + 1) / (warmup_iters + 1).\n    - Cosine decay from the end of warmup until lr_decay_iters, down to min_lr:\n      - decay_ratio = (it - warmup_iters) / (lr_decay_iters - warmup_iters)\n      - coeff = 0.5 * (1.0 + cos(pi * decay_ratio))\n      - return min_lr + coeff * (learning_rate - min_lr)\n    - If beyond lr_decay_iters, return min_lr.\n  - Evidence: [source: train.py, lines 231-246]\n\n- How it’s applied each iteration:\n  - In the training loop, the code selects the LR with lr = get_lr(iter_num) if decay_lr else learning_rate, and then assigns it to every optimizer param_group's 'lr'.\n  - Evidence: [source: train.py, lines 257-260]\n\n- Relevant hyperparameters (controls of the schedule):\n  - learning_rate (max LR), warmup_iters, lr_decay_iters, min_lr, and decay_lr (whether to decay).\n  - Evidence: [source: train.py, lines 51-72]\n\n- Configuration reference:\n  - The GPT-2 config sets lr_decay_iters to 600000 (to align with max_iters):\n  - Evidence: [source: config/train_gpt2.py, lines 1-12]\n\nIn short: learning rate scheduling is implemented in train.py via get_lr with a warmup followed by cosine decay, applied per iteration to the optimizer, with configuration knobs in train.py and a config file (lr_decay_iters) aligning the schedule to max_iters. Evidence sources: train.py [231-246], train.py [257-260], train.py [51-72], config/train_gpt2.py [1-12].",
+      "error": null
+    },
+    {
+      "name": "nanogpt_missing_auth",
+      "question": "Where is user login authentication implemented?",
+      "repository": "https://github.com/karpathy/nanoGPT",
+      "passed": false,
+      "expected_route": "code",
+      "actual_route": "code",
+      "route_pass": true,
+      "expected_sources": [],
+      "actual_sources": [
+        "model.py (lines 261)",
+        "model.py (lines 78)",
+        "train.py (lines 280)",
+        "configurator.py (lines 42)",
+        "bench.py (lines 24)",
+        "sample.py (lines 26)",
+        "model.py (lines 330)",
+        "model.py (lines 193)",
+        "train.py (lines 262)",
+        "bench.py (around line 37)",
+        "data/openwebtext/prepare.py (around line 25)",
+        "data/openwebtext/prepare.py (around line 42)",
+        "data/openwebtext/prepare.py (around line 43)",
+        "data/shakespeare_char/prepare.py (around line 32)",
+        "data/shakespeare_char/prepare.py (around line 34)",
+        "data/shakespeare_char/prepare.py (around line 65)",
+        "model.py (around line 2)"
+      ],
+      "source_pass": true,
+      "expected_keywords": [],
+      "keyword_coverage": 1.0,
+      "keyword_pass": true,
+      "must_refuse": true,
+      "refusal_pass": false,
+      "latency_seconds": 99.81,
+      "answer": "Not present. This repository is a lightweight GPT training framework (nanoGPT) and does not include any user login authentication.\n\nEvidence:\n- The README describes it as a GPT training/retraining setup (no web app or auth features) [source: README.md, lines 0013-0019].\n- The main code is focused on training and sampling a GPT model (train.py is a training script) [source: train.py, lines 0001-0009].\n- The model is a GPT implementation (model.py) with attention/MLP blocks, not an authentication system [source: model.py, lines 0010-0018].\n- The configurator handles dynamic config overrides, not authentication logic [source: configurator.py, lines 42-47].\n\nIf you’re looking to add login/auth, you’d need to implement a separate authentication layer or a web API around this training code; it’s not provided here. If you can point to a specific path or file you expect to contain authentication, I can re-check that area.",
+      "error": null
+    },
+    {
+      "name": "general_python_question",
+      "question": "What is a Python class?",
+      "repository": "https://github.com/karpathy/micrograd",
+      "passed": true,
+      "expected_route": "general",
+      "actual_route": "general",
+      "route_pass": true,
+      "expected_sources": [],
+      "actual_sources": [],
+      "source_pass": true,
+      "expected_keywords": [],
+      "keyword_coverage": 1.0,
+      "keyword_pass": true,
+      "must_refuse": false,
+      "refusal_pass": true,
+      "latency_seconds": 5.66,
+      "answer": "This question does not require codebase retrieval.",
+      "error": null
+    }
+  ]
+}

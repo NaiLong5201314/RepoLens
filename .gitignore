@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+.repolens_index/
+.repolens_repositories/
+.repolens_cache/
+
+evaluation_results.json
